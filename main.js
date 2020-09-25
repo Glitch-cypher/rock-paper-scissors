@@ -35,8 +35,8 @@ function RPS() {
     cM = randomMove();
     computer.innerText = 'computer chooses: ' + cM;
     getWinner(pM, cM);
-    output.value = `wins: ${wins},\n losses:${loss},\n draws:${draw},\n games played:${games}`;
-
+    output.innerText = `wins: ${wins},\n losses:${loss},\n draws:${draw},\n games played:${games}`;
+    console.log(output.value);
   } else {
     errorMes.innerText = error;
   }
