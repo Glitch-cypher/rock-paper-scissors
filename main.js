@@ -1,15 +1,16 @@
-let pM = "";
-let cM = "";
+let cM = "rock";
+let pM = prompt("Make your move!");
 
 function getWinner (pM,cM){
 
 if(pM === "rock" && cM === "scissors" || pM === "scissors" && cM === "paper" || pM === "paper" && cM === "rock") {
-return 1;
+    alert("1");
 } else if(cM === "rock" && pM === "scissors" || cM === "scissors" && pM === "paper" || cM === "paper" && pM === "rock") {
-return -1;
+    alert ("-1");
 } else if(cM === "rock" && pM === "rock" || cM === "scissors" && pM === "scissors" || cM === "paper" && pM === "paper") {
-  return 0;
+    alert("0");
 }
 }
-let result = getWinner("paper", "rock");
+let result = getWinner(pM, cM);
 
+//
