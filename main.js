@@ -6,53 +6,67 @@ let draw = 0;
 let games = 0;
 let button = document.querySelector("button");
 let input = document.querySelector("input");
-let output = document.querySelector("output");
+let output = document.querySelector("#scores");
 let userName = prompt("What username?");
 let nameOutput = document.querySelector("#userName");
+let computer = document.querySelector("#computer");
+let errorMes = document.querySelector("#dumbass");
+let error = "Enter the right thing, dumbass!";
+
+
+while (userName.length > 10) {
+  userName = prompt("What username?");
+}
 nameOutput.innerText = userName;
 
+
 function RPS() {
-  if(input.value === "" ) {
+  if (input.value === "") {
+    errorMes.innerText = error;
     return;
-  }
-  pM = input.value.toLowerCase();
-  if(pM === "rock" || pM === "scissors" || pM === "paper") {
-    cM = randomMove();
-  console.log(pM);
-  getWinner(pM, cM);
-  output.value = `wins: ${wins},\n losses:${loss},\n draws:${draw},\n games played:${games}`;
-    
+
+  } else {
+    errorMes.innerText = "";
   }
   
+  pM = input.value.toLowerCase();
+  if (pM === "rock" || pM === "scissors" || pM === "paper") {
+    // errorMes.innerText = "";
+    cM = randomMove();
+    computer.innerText = 'computer chooses: ' + cM;
+    getWinner(pM, cM);
+    output.value = `wins: ${wins},\n losses:${loss},\n draws:${draw},\n games played:${games}`;
+
+  } else {
+    errorMes.innerText = error;
+  }
+
 }
 
-  button.addEventListener("click", RPS);
+button.addEventListener("click", RPS);
 
-function getWinner (pM,cM){
-if(pM === "rock" && cM === "scissors" || pM === "scissors" && cM === "paper" || pM === "paper" && cM === "rock") {
-    wins ++;
-} else if(cM === "rock" && pM === "scissors" || cM === "scissors" && pM === "paper" || cM === "paper" && pM === "rock") {
-    loss ++;
-} else if(cM === "rock" && pM === "rock" || cM === "scissors" && pM === "scissors" || cM === "paper" && pM === "paper") {
-    draw ++;
-}else{
-}
+function getWinner(pM, cM) {
+  if (pM === "rock" && cM === "scissors" || pM === "scissors" && cM === "paper" || pM === "paper" && cM === "rock") {
+    wins++;
+  } else if (cM === "rock" && pM === "scissors" || cM === "scissors" && pM === "paper" || cM === "paper" && pM === "rock") {
+    loss++;
+  } else if (cM === "rock" && pM === "rock" || cM === "scissors" && pM === "scissors" || cM === "paper" && pM === "paper") {
+    draw++;
+  } else {}
 
-games++;
+  games++;
 
 }
 //
 function randomMove() {
-let roundNum = Math.round(Math.random()*2);
-if(roundNum === 0) {
-  return 'rock';
-} else if(roundNum === 1) {
-  return 'paper';
-} else if(roundNum === 2) {
-  return 'scissors';
-}
+  let roundNum = Math.round(Math.random() * 2);
+  if (roundNum === 0) {
+    return 'rock';
+  } else if (roundNum === 1) {
+    return 'paper';
+  } else if (roundNum === 2) {
+    return 'scissors';
+  }
 
 
 }
-
-
