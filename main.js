@@ -7,17 +7,14 @@ let games = 0;
 let button = document.querySelector("button");
 let input = document.querySelector("input");
 let output = document.querySelector("#scores");
-let userName = prompt("What username?");
+
 let nameOutput = document.querySelector("#userName");
 let computer = document.querySelector("#computer");
 let errorMes = document.querySelector("#dumbass");
 let error = "Enter the right thing, dumbass!";
 
 
-while (userName.length > 10) {
-  userName = prompt("What username?");
-}
-nameOutput.innerText = userName;
+
 
 
 function RPS() {
@@ -28,7 +25,7 @@ function RPS() {
   } else {
     errorMes.innerText = "";
   }
-  
+
   pM = input.value.toLowerCase();
   if (pM === "rock" || pM === "scissors" || pM === "paper") {
     // errorMes.innerText = "";
@@ -70,3 +67,10 @@ function randomMove() {
 
 
 }
+
+let userName = prompt("What username?");
+
+while (userName.length > 10) {
+  userName = prompt("What username?");
+}
+nameOutput.innerText = userName;
