@@ -71,6 +71,13 @@ This will be deemed as complete when the users cannot enter a name longer than 1
 
 BONUS: Valid usernames should only start with letters, not numbers or symbols.
 EXTRA BONUS: The first letter of the username should be capitalised.
+ 1. create variable for username //
+ 2. create a prompt for username //
+ 3. link variable and prompt //
+ 4. create anouther output for username //
+ 5. make sure less than 10 characters
+ 6. make sure first character is a letter
+ 7. capitalise first letter 
 
 ## Task 9: Style and Animate
 
