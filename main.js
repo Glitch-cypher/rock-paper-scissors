@@ -4,31 +4,38 @@ let wins = 0;
 let loss = 0;
 let draw = 0;
 let games = 0;
+let button = document.querySelector("button");
+let input = document.querySelector("input");
+let output = document.querySelector("output");
 
 
-while(confirm('Ready for rock, paper, scissors?')){
-  pM = prompt("Make your move!");
-  cM = randomMove();
-  console.log(cM);
+function RPS() {
+  if(input.value === "" ) {
+    return;
+  }
+  pM = input.value.toLowerCase();
+  if(pM === "rock" || pM === "scissors" || pM === "paper") {
+    cM = randomMove();
+  console.log(pM);
   getWinner(pM, cM);
-  alert(`wins: ${wins},\n losses:${loss},\n draws:${draw},\n games played:${games}`);
+  output.value = `wins: ${wins},\n losses:${loss},\n draws:${draw},\n games played:${games}`;
+    
+  }
+  
 }
 
+  button.addEventListener("click", RPS);
 
 function getWinner (pM,cM){
 if(pM === "rock" && cM === "scissors" || pM === "scissors" && cM === "paper" || pM === "paper" && cM === "rock") {
     wins ++;
-    alert("1");
 } else if(cM === "rock" && pM === "scissors" || cM === "scissors" && pM === "paper" || cM === "paper" && pM === "rock") {
     loss ++;
-    alert ("-1");
 } else if(cM === "rock" && pM === "rock" || cM === "scissors" && pM === "scissors" || cM === "paper" && pM === "paper") {
     draw ++;
-    alert("0");
 }else{
-    alert('Dumbass, enter the right thing!');
 }
-// console.log(cM)
+
 games++;
 
 }
