@@ -41,8 +41,8 @@ function RPS() {
 }
 document.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
-    RPS()
-    input.value = ""
+    RPS();
+    input.value = "";
   }
 });
 button.addEventListener("click", RPS);
