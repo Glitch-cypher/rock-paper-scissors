@@ -7,9 +7,9 @@ let games = 0;
 let button = document.querySelector("button");
 let input = document.querySelector("input");
 let output = document.querySelector("output");
-let userName =prompt("What username?");
+let userName = prompt("What username?");
 let nameOutput = document.querySelector("#userName");
-nameOutput.value = userName;
+nameOutput.innerText = userName;
 
 function RPS() {
   if(input.value === "" ) {
