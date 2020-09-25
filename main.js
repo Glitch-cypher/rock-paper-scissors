@@ -1,5 +1,15 @@
 let cM = randomMove();
-let pM = prompt("Make your move!");
+let pM = "";
+
+
+
+while(confirm('still playing')){
+  pM = prompt("Make your move!");
+  cM = randomMove();
+  console.log(randomMove());
+  getWinner(pM, cM);
+}
+
 
 function getWinner (pM,cM){
 if(pM === "rock" && cM === "scissors" || pM === "scissors" && cM === "paper" || pM === "paper" && cM === "rock") {
@@ -9,10 +19,10 @@ if(pM === "rock" && cM === "scissors" || pM === "scissors" && cM === "paper" || 
 } else if(cM === "rock" && pM === "rock" || cM === "scissors" && pM === "scissors" || cM === "paper" && pM === "paper") {
     alert("0");
 }
-console.log(cM)
-}
-let result = getWinner(pM, cM);
+// console.log(cM)
 
+
+}
 //
 function randomMove() {
 let roundNum = Math.round(Math.random()*2);
